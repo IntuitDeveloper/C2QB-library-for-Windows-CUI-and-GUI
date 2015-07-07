@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Intuit.lib.C2QB
 {
-    public class Class1
+    interface IConnect<T>
     {
+        bool Validate(T objectType);
+        object Connect(T objectType);
     }
 }
