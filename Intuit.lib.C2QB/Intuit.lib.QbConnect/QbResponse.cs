@@ -12,5 +12,6 @@ namespace Intuit.lib.C2QB
         public string RealmId { get; set; }
         public string DataSource { get; set; }
         public DateTime ExpirationDateTime { get; set; }
+       
     }
 }

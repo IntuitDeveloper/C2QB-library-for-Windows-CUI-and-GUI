@@ -6,6 +6,8 @@ using Intuit.lib.C2QB.Configuration;
 using DevDefined.OAuth.Consumer;
 using DevDefined.OAuth.Framework;
 using System.Diagnostics;
+using System.Collections;
+using System.Collections.Specialized;
 namespace Intuit.lib.C2QB
 {
     public sealed class QbConnect : IConnect<QbConfig>
@@ -14,6 +16,9 @@ namespace Intuit.lib.C2QB
         private const string _dummyProtocol = "http://";
         private const string _dummyHost = "www.example.com";
         private IToken _requestToken;
+        private QbResponse _qbResponse = null;
+        private QbConfig _objectType = null;
+        private SHDocVw.InternetExplorer _internetExplorer = null;
         public QbConnect()
         {
 
@@ -46,52 +51,37 @@ namespace Intuit.lib.C2QB
             IOAuthSession oauthSession = createDevDefinedOAuthSession(objectType);
             return oauthSession.GetRequestToken();
         }
-        //private void oauthBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        //{
-        //    if (e.Url.Host == _dummyHost)
-        //    {
-        //        NameValueCollection query = HttpUtility.ParseQueryString(e.Url.Query);
-        //        _oauthVerifier = query["oauth_verifier"];
-        //        _ippRealmOAuthProfile.realmId = query["realmId"];
-        //        _ippRealmOAuthProfile.dataSource = query["dataSource"];
-        //        _caughtCallback = true;
-        //        oauthBrowser.Navigate("about:blank");
-        //    }
-        //    else if (_caughtCallback)
-        //    {
-        //        IToken accessToken = exchangeRequestTokenForAccessToken(_consumerKey, _consumerSecret, _requestToken);
-        //        _ippRealmOAuthProfile.accessToken = accessToken.Token;
-        //        _ippRealmOAuthProfile.accessSecret = accessToken.TokenSecret;
-        //        _ippRealmOAuthProfile.expirationDateTime = DateTime.Now.AddMonths(6);
-        //        this.DialogResult = DialogResult.OK;
-        //        this.Close();
-        //    }
-        //}
         private void redirectToIppForUserAuthorization(IToken requestToken, QbConfig objectType)
         {
             var oauthUserAuthorizeUrl = objectType.OauthUserAuthUrl;
             string navigateUrl = oauthUserAuthorizeUrl + "?oauth_token=" + requestToken.Token + "&oauth_callback=" + UriUtility.UrlEncode(_dummyProtocol + _dummyHost);
-            WinSys(navigateUrl);
+            WinSys(navigateUrl, objectType);
         }
 
-        private void WinSys(string url)
+        private void WinSys(string url, QbConfig objectType)
         {
             try
             {
+                _qbResponse = new QbResponse();
+                _objectType = objectType;
                 var IE = new SHDocVw.InternetExplorer();
                 object URL = url;
                 IE.ToolBar = 0;
                 IE.StatusBar = false;
                 IE.MenuBar = false;
-                IE.Width = 622;
-                IE.Height = 582;
+                IE.Width = 1022;
+                IE.Height = 782;
                 IE.Visible = true;
                 IE.Navigate2(url, null, null, null, null);
+                Console.WriteLine("Begin");
                 while (IE.ReadyState != SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
                 {
+                    Console.WriteLine("Loading the web page...");
                     if (IE.ReadyState == SHDocVw.tagREADYSTATE.READYSTATE_COMPLETE)
                     {
-                        Console.WriteLine("Loaded");
+                        IE.NavigateComplete2 += IE_NavigateComplete2;
+                        Console.WriteLine("Loaded!");
+                        _internetExplorer = IE;
                     }
                 }
             }
@@ -100,24 +90,29 @@ namespace Intuit.lib.C2QB
                 
                 throw;
             }
-        }
-
-        void IE_DocumentComplete(object pDisp, ref object URL)
-        {
-            
+            while (true) ;
         }
 
         void IE_NavigateComplete2(object pDisp, ref object URL)
         {
-            string urlValue = URL as string;
-            Console.Write(urlValue);
-        }
-
-        
-
-        private void OnBeforeNavigate2(object pDisp, ref object URL, ref object Flags, ref object TargetFrameName, ref object PostData, ref object Headers, ref bool Cancel)
-        {
-            throw new NotImplementedException();
+            string hostUrl = URL as string;
+            if (hostUrl.Contains("www.example.com"))
+            {
+                NameValueCollection query = System.Web.HttpUtility.ParseQueryString(hostUrl);
+                _oauthVerifier = query["oauth_verifier"];
+                _qbResponse.RealmId = query["realmId"];
+                _qbResponse.DataSource = query["dataSource"];
+                IToken accessToken = exchangeRequestTokenForAccessToken(_objectType,_requestToken);
+                _qbResponse.AccessToken = accessToken.Token;
+                _qbResponse.AccessSecret = accessToken.TokenSecret;
+                _qbResponse.ExpirationDateTime = DateTime.Now.AddMonths(6);
+                _internetExplorer.Quit();
+                Debug.WriteLine(string.Format("Access Token : {0}", _qbResponse.AccessToken));
+                Debug.WriteLine(string.Format("Access Secret : {0}", _qbResponse.AccessSecret));
+                Console.WriteLine(string.Format("Access Token : {0}",_qbResponse.AccessToken));
+                Console.WriteLine(string.Format("Access Secret : {0}",_qbResponse.AccessSecret));
+            }
+            Console.WriteLine(URL as string);
         }
         private IOAuthSession createDevDefinedOAuthSession(QbConfig objectType)
         {
