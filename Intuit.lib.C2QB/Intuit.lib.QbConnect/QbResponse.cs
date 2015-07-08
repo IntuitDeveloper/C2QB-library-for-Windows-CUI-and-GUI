@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Intuit.lib.C2QB
 {
-    class QbResponse
+    public class QbResponse
     {      
         public string AccessToken { get; set; }
         public string AccessSecret { get; set; }

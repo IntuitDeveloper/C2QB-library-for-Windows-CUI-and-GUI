@@ -8,6 +8,6 @@ namespace Intuit.lib.C2QB
     interface IConnect<T>
     {
         bool Validate(T objectType);
-        object Connect(T objectType);
+        void Connect(T objectType,out QbResponse qbResponse);
     }
 }

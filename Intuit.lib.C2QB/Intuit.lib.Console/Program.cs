@@ -21,8 +21,9 @@ namespace Intuit.lib.Console
             config.OauthBaseUrl = ConfigurationSettings.AppSettings["oauthBaseUrl"];
             config.OauthUserAuthUrl = ConfigurationSettings.AppSettings["oauthUserAuthUrl"];
             config.SelectedMode = QbConfig.AppMode.Console;
-            QbConnect obj = new QbConnect();
-            obj.Connect(config);
+            QbResponse result = null;
+            QbConnect connectToQuickBooks = new QbConnect();
+            connectToQuickBooks.Connect(config, out result);
         }
     }
 }
