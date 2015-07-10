@@ -10,9 +10,7 @@ Connecto to Quickbooks library for Windows
 <li>Windows Phone</li>
 </ul>
 
-## Usage
-
-## Fill in your configuration
+## How should I Proceed? :
 
 ## Usage :  
 
