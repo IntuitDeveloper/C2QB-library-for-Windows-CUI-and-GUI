@@ -24,3 +24,11 @@ Connecto to Quickbooks library for Windows
 
 ![Usage] (images/oauth.jpg "Layer Diagram")
 
+## Authorization
+
+![Usage] (images/authorize.jpg "Authorization")
+
+## Access Token
+
+![Usage] (images/accesstoken.jpg "Access Token")
+
