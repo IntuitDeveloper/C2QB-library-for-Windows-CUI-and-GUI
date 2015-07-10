@@ -12,8 +12,17 @@ Connecto to Quickbooks library for Windows
 
 ## Usage
 
-* Fill in your configuration
-* Usage :  ![Usage] (images/usage.jpg "How to call the library")
-* Configuration File : ![Usage] (images/config.png "Configuration")
-* Layer Diagram : ![Usage] (images/oauth.jpg "Layer Diagram")
+## Fill in your configuration
+
+## Usage :  
+
+![Usage] (images/usage.JPG "How to call the library")
+
+## Configuration File
+
+![Usage] (images/config.png "Configuration")
+
+## Layer Diagram
+
+![Usage] (images/oauth.jpg "Layer Diagram")
 
