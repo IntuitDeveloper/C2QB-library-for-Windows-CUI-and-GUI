@@ -14,7 +14,7 @@ Connect to Quickbooks library for Windows
 
 ## Usage :  
 
-![] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG "How to call the library")
+![] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
 
 
 ## Configuration File
