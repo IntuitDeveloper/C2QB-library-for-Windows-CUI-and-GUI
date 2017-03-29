@@ -16,7 +16,7 @@ Connect to Quickbooks library for Windows
 
 ![Usage] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
 ![](https://raw.github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
-![](https://intuit.github.io/wasabi/v1/guide/images/readme/CreateBucket.png)
+![](https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/usage.JPG)
 
 
 ## Configuration File
