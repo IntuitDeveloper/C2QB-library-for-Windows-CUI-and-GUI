@@ -14,23 +14,24 @@ Connect to Quickbooks library for Windows
 
 ## Usage :  
 
-![] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
+![Usage] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
 ![](https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
 
 
 ## Configuration File
 
-![Usage] (images/config.png "Configuration")
+![Configuration] (/images/config.png?raw=true "Configuration")
+
 
 ## Layer Diagram
 
-![Usage] (images/oauth.jpg "Layer Diagram")
+![Layer Diagram] (images/oauth.jpg "Layer Diagram")
 
 ## Authorization
 
-![Usage] (images/authorize.jpg "Authorization")
+![Authoriation] (images/authorize.jpg "Authorization")
 
 ## Access Token
 
-![Usage] (images/accesstoken.jpg "Access Token")
+![Access Token] (images/accesstoken.jpg "Access Token")
 
