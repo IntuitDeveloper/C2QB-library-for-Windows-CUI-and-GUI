@@ -14,25 +14,24 @@ Connect to Quickbooks library for Windows
 
 ## Usage :  
 
-![Usage] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
-![](https://raw.github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG)
-![](https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/usage.JPG)
+
+![Usage](https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/usage.JPG)
 
 
 ## Configuration File
 
-![Configuration] (/images/config.png?raw=true "Configuration")
+![Configuration] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/config.png "Configuration")
 
 
 ## Layer Diagram
 
-![Layer Diagram] (images/oauth.jpg "Layer Diagram")
+![Layer Diagram] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/oauth.jpg "Layer Diagram")
 
 ## Authorization
 
-![Authoriation] (images/authorize.jpg "Authorization")
+![Authoriation] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/authorize.jpg "Authorization")
 
 ## Access Token
 
-![Access Token] (images/accesstoken.jpg "Access Token")
+![Access Token] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/accesstoken.jpg "Access Token")
 
