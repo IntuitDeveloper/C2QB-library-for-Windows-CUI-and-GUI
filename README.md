@@ -1,4 +1,4 @@
-Connecto to Quickbooks library for Windows
+Connect to Quickbooks library for Windows
 ============================================
 
 <p>Welcome to the Intuit Developer's Connect to Quickbooks library for Windows - Console/Desktop/Windows Phone</p>
@@ -14,7 +14,8 @@ Connecto to Quickbooks library for Windows
 
 ## Usage :  
 
-![Usage] (images/usage.JPG "How to call the library")
+![Usage] (https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/tree/master/images/usage.JPG "How to call the library")
+
 
 ## Configuration File
 
