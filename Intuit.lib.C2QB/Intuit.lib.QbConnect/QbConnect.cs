@@ -9,12 +9,14 @@ using System.Diagnostics;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
+
+
 namespace Intuit.lib.C2QB
 {
     public sealed class QbConnect : IConnect<QbConfig>
     {
         private string _oauthVerifier = string.Empty;
-        private const string _tempProtocol = "http://";
+        private const string _tempProtocol = "https://";
         private const string _tempHost = "www.example.com";
         private IToken _requestToken;
         private QbResponse _qbResponse = null;
@@ -92,6 +94,10 @@ namespace Intuit.lib.C2QB
             {
                 _qbResponse = new QbResponse();
                 _qbConfiguration = qbConfig;
+
+
+               
+
                 var IE = new SHDocVw.InternetExplorer();
                 object URL = url;
                 IE.ToolBar = 0;
