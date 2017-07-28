@@ -1,5 +1,5 @@
-Connect to Quickbooks library for Windows
-============================================
+Connect to Quickbooks library for Windows for Oauth1 apps
+=========================================================
 
 <p>Welcome to the Intuit Developer's Connect to Quickbooks library for Windows - Console/Desktop/Windows Phone</p>
 
@@ -11,6 +11,7 @@ Connect to Quickbooks library for Windows
 </ul>
 
 ## How should I Proceed? :
+You should have .Net framework 4.6.1 to run this app.
 
 ## Usage :  
 
