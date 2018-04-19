@@ -38,4 +38,4 @@ You should have .Net framework 4.6.1 to run this app.
 
 ![Access Token](https://github.com/IntuitDeveloper/C2QB-library-for-Windows-CUI-and-GUI/blob/master/images/accesstoken.jpg "Access Token")
 
-[ss1]: https://help.developer.intuit.com/s/samplefeedback?cid=9010&repoName=PayrollSamples
+[ss1]: https://help.developer.intuit.com/s/samplefeedback?cid=9010&repoName=C2QB-library-for-Windows-CUI-and-GUI
