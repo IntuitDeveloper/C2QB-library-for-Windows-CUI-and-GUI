@@ -6,7 +6,7 @@ Connect to Quickbooks library for Windows for Oauth1 apps
 <p>Welcome to the Intuit Developer's Connect to Quickbooks library for Windows - Console/Desktop/Windows Phone</p>
 
 <ul>
-<li>We are hellping you to Connect to Quick books from the following platforms</li>
+<li>We are hellping you to Connect to Quickbooks from the following platforms</li>
 <li>Console</li>
 <li>Desktop</li>
 <li>Windows Phone</li>
